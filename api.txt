@@ -1,0 +1,145 @@
+Communications Protocol of Hardware and Software LED control
+
+Query:
+Send order: 0xEF + 0x01 + 0x77
+
+Controller response:
+    0x66 + 
+    8bit device name(0x01) +
+    8bit swtich on /off +
+    8bit mode value +
+    8bit run/pause state +
+    8bit speed value +
+    8bit red data +
+    8bit green data +
+    8bit blue data +
+    0x00 +
+    0x99
+
+--------------------------------------------------------------------------------
+Send static color:
+Send order:
+    0X56 +
+    8bit red data +
+    8bit green data +
+    8bit blue data +
+    0XAA
+
+Controller response:no response
+
+--------------------------------------------------------------------------------
+Send built-in mode:
+Send order:
+    0xBB +
+    8bit mode value +
+    8bit speed value +
+    0X44
+
+Controller response:no response
+
+--------------------------------------------------------------------------------
+Send command:
+    switch on/off ;run/pause 
+
+Send command:
+ 0xCC +
+ 8bit key +
+ 0X33
+
+Controller response:no response
+
+--------------------------------------------------------------------------------
+Send custom mode:
+
+Send command:
+    0x99 +
+    First point 24bit colorimetric value(R=?,G=?,B=?) +
+    Second point 24bit colorimetric value + 
+    Third point 24bit colorimetric value +
+    Fourth point 24bit colorimetric value +
+    Fifth point 24bit colorimetric value +
+    Sixth point 24bit colorimetric value +
+    Seventh point 24bit colorimetric value +
+    Eighth point 24bit colorimetric value +
+    Ninth point 24bit colorimetric value +
+    Tenth point 24bit colorimetric value +
+    Eleventh point 24bit colorimetric value +
+    Twelveth point 24bit colorimetric value +
+    Thirteenth point 24bit colorimetric value +
+    Fourteenth point 24bit colorimetric value +
+    Fifteenth point 24bit colorimetric value +
+    Sixteenth point 24bit colorimetric value +
+    8bit speed value +
+    8bit CHANGING mode value +
+    0xFF +
+    0x66
+
+First point 24bit colorimetric value
+    are three bits which are three value of first RGB.There are total 16colors,then color value have 48 types. 
+
+
+
+Notice:
+    R=1,G=2,B=3 is a color terminator,it means this color is the last color. 
+
+Controller response:no response
+
+--------------------------------------------------------------------------------
+
+Other info:
+built-in mode content:
+    1 | 7 colors  gradual  change  | 0x25
+    2 | red gradual  change | 0x26
+    3 | green  gradual  change | 0x27
+    4 | blue gradual  change | 0x28
+    5 | yellow gradual  change | 0x29
+    6 | cyan gradual  change | 0x2A
+    7 | purple gradual  change | 0x2B
+    8 | white gradual  change | 0x2C
+    9 | red and green gradual  change | 0x2D
+    10 | red and blue gradual  change | 0x2E
+    11 | green and blue gradual  change | 0x2F
+    12 | 7 colors flicker | 0x30
+    13 | red flicker | 0x31
+    14 | green flicker | 0x32
+    15 | blue flicker | 0x33
+    16 | yellow flicker | 0x34
+    17 | cyan flicker | 0x35
+    18 | purple flicker | 0x36
+    19 | white flicker | 0x37
+    20 | jumpy 7 colors | 0x38
+
+colorimetric valuedefinition 
+    8bit red data 0x00--0xFF
+    8bit green data 0x00--0xFF
+    8bit blue data 0x00--0xFF
+
+8bit mode value
+    0x25 ~ 0x38 is built-in mode,ps refer to “appendix1,built-in mode content”
+    0x39 is custom mode
+    0x41 is static color mode
+
+8bit swtich on /off
+    0x23 is switch on 
+    0x24 is switch off 
+
+8bit run/pause state
+    0x20 is run 
+    0x21 is pause
+
+8bit on/off state
+    0x23 is switch on
+    0x24 is switch off
+
+8bit speed value (built-in mode、custom mode operative)
+    Range:
+        0x01--0x1F ,0x01 is the fastest,0x1F is the slowest
+
+8bit speed value
+    Range:
+        0x01--0x1F ,0x01 is the fastest,0x1F is the slowest.
+
+8bit CHANGING mode value
+    gradual | 0x3A
+    jump | 0x3B
+    flash | 0x3C
