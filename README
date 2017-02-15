@@ -1,0 +1,14 @@
+Project Status:
+
+I'm putting this together from other code and documents that I've found online.
+
+My usecase is to provide demonstrations of the SaltStack products interface with
+third party API system.
+
+
+NOTE:
+None of this code has NOT been tested. I'm still waiting for my devices to show up.
+
+
+REFERENCE DOCUMENTATION:
+https://github.com/jacklaag/rgb_wifi_python/blob/master/API%20Documentation/Protocol.doc

@@ -77,8 +77,6 @@ Send command:
 First point 24bit colorimetric value
     are three bits which are three value of first RGB.There are total 16colors,then color value have 48 types. 
 
-
-
 Notice:
     R=1,G=2,B=3 is a color terminator,it means this color is the last color. 
 
