@@ -6,9 +6,19 @@ My usecase is to provide demonstrations of the SaltStack products interface with
 third party API system.
 
 
+WARNING!!!!
+From the notes I'm reading on this device it does have a security risk. 
+Once I get my device and dig in deeper I will provide feedback on what I found.
+
+
 NOTE:
 None of this code has NOT been tested. I'm still waiting for my devices to show up.
 
 
 REFERENCE DOCUMENTATION:
 https://github.com/jacklaag/rgb_wifi_python/blob/master/API%20Documentation/Protocol.doc
+
+
+PRODUCT:
+From AMAZON
+https://www.amazon.com/gp/product/B00EUVDQL0/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1
